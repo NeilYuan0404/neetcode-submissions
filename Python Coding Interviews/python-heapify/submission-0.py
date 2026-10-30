@@ -1,0 +1,30 @@
+import heapq
+from typing import List
+
+
+def heapify_strings(strings: List[str]) -> List[str]:
+    my_heap = [] 
+    for string in strings:
+        heapq.heappush(my_heap, string)
+    return my_heap
+
+def heapify_integers(integers: List[int]) -> List[int]:
+    my_heap = []
+    for integer in integers:
+        heapq.heappush(my_heap, integer)        
+    return my_heap
+
+
+def heap_sort(nums: List[int]) -> List[int]:
+    ans = []
+    heapq.heapify(nums)
+    while nums:
+        ans.append(heapq.heappop(nums))
+    return ans
+
+
+
+# do not modify below this line
+print(heapify_strings(["b", "a", "e", "c", "d"]))
+print(heapify_integers([3, 4, 5, 1, 2, 6]))
+print(heap_sort([3, 4, 5, 1, 2, 6]))
